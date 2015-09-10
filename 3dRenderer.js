@@ -10,5 +10,7 @@ Player = {
     direction: NaN
 }
 onMessage = function(e) {
-    
+    switch(e.data[0]) {
+        case "move":
+    }
 };
