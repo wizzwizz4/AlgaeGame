@@ -4,6 +4,11 @@
     algaeGrid: undefined,
     size: NaN
 }).algaeGrid = new Uint8Array(Map.size * Map.size);
+Player = {
+    x: NaN,
+    y: NaN,
+    direction: NaN
+}
 onMessage = function(e) {
     
 };
