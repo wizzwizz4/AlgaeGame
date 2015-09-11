@@ -3,8 +3,11 @@
 
 //Should be externally modified
 Map = {
-    algaeGrid: undefined,
-    size: NaN
+    data: undefined, //see getData for format
+    size: NaN //Square map
+    getData = function(x,y) { //do not externally modify!
+        return this.data[(x * this.size) + y]; 
+    }
 }
 //Map.algaeGrid = new Uint8Array(Map.size * Map.size); //To be done externally
 Player = {
@@ -21,19 +24,19 @@ onMessage = function(e) {
             isFrameOld = true;
             break;
         case "getFrame":
-            if (isFrameOld) render();
+            if (isFrameOld) render(100); //distance in map data points
             isFrameOld = false
             postMessage(["draw", Frame]);
             break;
     }
 };
 
-render = function() {
+render = function(distance) {
     var rays = [];
     for (var a = 0; a < Frame.width; a++) {
-        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width))
+        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width), distance)
     }
 };
 Ray = function(direction) {
-    //Sort this next!
+    //Constructor
 };
