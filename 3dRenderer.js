@@ -34,9 +34,16 @@ onMessage = function(e) {
 render = function(distance) {
     var rays = [];
     for (var a = 0; a < Frame.width; a++) {
-        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width), distance)
+        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width), distance);
     }
 };
-Ray = function(direction) {
-    //Constructor
+Ray = function(direction, distance) {
+    this.points = [];
+    this.visData = [];
+    direction = direction % 360;
+    var b = true;
+    ((var currentPoint = {}).x = Player.x).y = Player.y;
+    for (var a = 0; b; a++) {
+        //Here
+    }
 };
