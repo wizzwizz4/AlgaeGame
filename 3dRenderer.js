@@ -42,7 +42,9 @@ Ray = function(direction, distance) {
     this.visData = [];
     direction = direction % 360;
     var b = true;
-    ((var currentPoint = {}).x = Player.x).y = Player.y;
+    var currentPoint = {};
+    currentPoint.x = Player.x;
+    currentPoint.y = Player.y;
     for (var a = 0; b; a++) {
         //Here
     }
