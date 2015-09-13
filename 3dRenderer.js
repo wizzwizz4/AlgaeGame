@@ -46,6 +46,6 @@ Ray = function(direction, distance) {
     currentPoint.x = Player.x;
     currentPoint.y = Player.y;
     for (var a = 0; b; a++) {
-        //Here
+        //nextX = 
     }
 };
