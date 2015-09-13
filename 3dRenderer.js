@@ -42,10 +42,17 @@ Ray = function(direction, distance) {
     this.visData = [];
     direction = direction % 360;
     var b = true;
-    var currentPoint = {};
-    currentPoint.x = Player.x;
-    currentPoint.y = Player.y;
+    var currentPoint = new Point(Player.x, Player.y);
+    var nextX;
+    var nextY;
     for (var a = 0; b; a++) {
-        //nextX = 
+        nextX = 
     }
+};
+Point = function(x, y) {
+    this.x = x;
+    this.y = y;
+    var xDist = Math.abs(Player.x - x);
+    var yDist = Math.abs(Player.y - y);
+    this.distance = Math.sqrt((xDist * xDist) + (yDist * yDist));
 };
