@@ -46,7 +46,7 @@ Ray = function(direction, distance) {
     var nextX;
     var nextY;
     for (var a = 0; b; a++) {
-        nextX = 
+        nextX = new Point(); //HERE!!!!!
     }
 };
 Point = function(x, y) {
