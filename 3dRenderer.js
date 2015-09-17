@@ -41,13 +41,25 @@ Ray = function(direction, distance) {
     this.points = [];
     this.visData = [];
     direction = direction % 360;
-    //switch (Math.floor(direction / 90);
+    var quadrant = {};
+    switch (Math.floor(direction / 90)) {
+        case 0:
+            if (direction == 0) {
+                quadrant.y = 0;
+            } else {
+                quadrant.y = 1;
+            }
+            quadrant.x = 1;
+            break;
+        case 1:
+            //if //HERE!!!
+    }
     var b = true;
     var currentPoint = new Point(Player.x, Player.y);
     var nextX;
     var nextY;
     for (var a = 0; b; a++) {
-        if (currentPoint.x % 1 = 0) {
+        if (currentPoint.x % 1 == 0) {
             nextX = new Point(currentPoint.x + 1, currentPoint.y + ());
         }
     }
