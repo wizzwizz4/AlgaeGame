@@ -27,26 +27,29 @@ onMessage = function(e) {
             if (isFrameOld) render(100); //distance in map data points
             isFrameOld = false
             postMessage(["draw", Frame]);
-            break;
+            break;z
     }
 };
 
 render = function(distance) {
     var rays = [];
     for (var a = 0; a < Frame.width; a++) {
-        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width), distance);
+        rays[a] = new Ray(90 + Player.direction - (a * 180 / Frame.width), distance); //Where 180 is the FOV
     }
 };
 Ray = function(direction, distance) {
     this.points = [];
     this.visData = [];
     direction = direction % 360;
+    //switch (Math.floor(direction / 90);
     var b = true;
     var currentPoint = new Point(Player.x, Player.y);
     var nextX;
     var nextY;
     for (var a = 0; b; a++) {
-        nextX = new Point(); //HERE!!!!!
+        if (currentPoint.x % 1 = 0) {
+            nextX = new Point(currentPoint.x + 1, currentPoint.y + ());
+        }
     }
 };
 Point = function(x, y) {
