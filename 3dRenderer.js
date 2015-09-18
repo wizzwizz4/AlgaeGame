@@ -52,15 +52,42 @@ Ray = function(direction, distance) {
             quadrant.x = 1;
             break;
         case 1:
-            //if //HERE!!!
+            if (direction == 90) {
+                quadrant.x = 0;
+            } else {
+                quadrant.x = -1;
+            }
+            quadrant.y = 1;
+            break;
+        case 2:
+            if (direction == 180) {
+                quadrant.y = 0;
+            } else {
+                quadrant.y = -1;
+            }
+            quadrant.x = -1;
+            break;
+        case 3:
+            if (direction == 270) {
+                quadrant.x = 0;
+            } else {
+                quadrant.x = 1;
+            }
+            quadrant.y = -1;
     }
     var b = true;
     var currentPoint = new Point(Player.x, Player.y);
     var nextX;
     var nextY;
     for (var a = 0; b; a++) {
-        if (currentPoint.x % 1 == 0) {
-            nextX = new Point(currentPoint.x + 1, currentPoint.y + ());
+        if (direction.x == 0 || direction.y == 0) {
+            //Check for which, then do sum w/o div by 0 err.
+        } else {
+            if (currentPoint.x % 1 == 0) {
+                nextX = new Point(currentPoint.x + direction.x, currentPoint.y + ());//here
+            } else {
+                nextX = new Point(Math.ceil(currentPoint.x), undefined); //here
+            }
         }
     }
 };
@@ -70,4 +97,5 @@ Point = function(x, y) {
     var xDist = Math.abs(Player.x - x);
     var yDist = Math.abs(Player.y - y);
     this.distance = Math.sqrt((xDist * xDist) + (yDist * yDist));
+    //add this.data with the data point?
 };
