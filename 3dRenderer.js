@@ -81,7 +81,12 @@ Ray = function(direction, distance) {
     var nextY;
     for (var a = 0; b; a++) {
         if (direction.x == 0 || direction.y == 0) {
-            //Check for which, then do sum w/o div by 0 err.
+            if (direction.x == 0) {
+                nextX = new Point(currentPoint.x, Infinity * direction.y);
+                nextY = new Point
+            } else {
+                nextY = new Point(Infinity * direction.x, currentPoint.y);
+            }
         } else {
             if (currentPoint.x % 1 == 0) {
                 nextX = new Point(currentPoint.x + direction.x, currentPoint.y + ());//here
