@@ -75,23 +75,24 @@ Ray = function(direction, distance) {
             }
             quadrant.y = -1;
     }
+    direction = direction / 180 * Math.PI;
     var b = true;
     var currentPoint = new Point(Player.x, Player.y);
     var nextX;
     var nextY;
     for (var a = 0; b; a++) {
-        if (direction.x == 0 || direction.y == 0) {
+        if (quadrant.x == 0 || quadrant.y == 0) {
             if (direction.x == 0) {
-                nextX = new Point(currentPoint.x, Infinity * direction.y);
+                nextX = new Point(currentPoint.x, Infinity * quadrant.y);
                 nextY = new Point
             } else {
-                nextY = new Point(Infinity * direction.x, currentPoint.y);
+                nextY = new Point(Infinity * quadrant.x, quadrant.y);
             }
         } else {
             if (currentPoint.x % 1 == 0) {
-                nextX = new Point(currentPoint.x + direction.x, currentPoint.y + ());//here
+                nextX = new Point(currentPoint.x + quadrant.x, currentPoint.y + (Math.sin(direction) * quadrant.x / Math.cos(direction));//here
             } else {
-                nextX = new Point(Math.ceil(currentPoint.x), undefined); //here
+                nextX = new Point((quadrant.x == 1) ? Math.ceil(currentPoint.x) : Math.floor(currentPoint.x), undefined); //here
             }
         }
     }
